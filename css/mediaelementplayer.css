@@ -422,3 +422,350 @@
             transform: scale(0);
     width: 10px;
 }
+
+.mejs__time-rail:hover .mejs__time-handle-content,
+.mejs__time-rail .mejs__time-handle-content:focus,
+.mejs__time-rail .mejs__time-handle-content:active {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+
+.mejs__time-float {
+    background: #eee;
+    border: solid 1px #333;
+    bottom: 100%;
+    color: #111;
+    display: none;
+    height: 17px;
+    margin-bottom: 9px;
+    position: absolute;
+    text-align: center;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 36px;
+}
+
+.mejs__time-float-current {
+    display: block;
+    left: 0;
+    margin: 2px;
+    text-align: center;
+    width: 30px;
+}
+
+.mejs__time-float-corner {
+    border: solid 5px #eee;
+    border-color: #eee transparent transparent;
+    border-radius: 0;
+    display: block;
+    height: 0;
+    left: 50%;
+    line-height: 0;
+    position: absolute;
+    top: 100%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 0;
+}
+
+.mejs__long-video .mejs__time-float {
+    margin-left: -23px;
+    width: 64px;
+}
+
+.mejs__long-video .mejs__time-float-current {
+    width: 60px;
+}
+
+.mejs__broadcast {
+    color: #fff;
+    height: 10px;
+    position: absolute;
+    top: 15px;
+    width: 100%;
+}
+
+/* End: Progress Bar */
+
+/* Start: Fullscreen */
+.mejs__fullscreen-button > button {
+    background-position: -80px 0;
+}
+
+.mejs__unfullscreen > button {
+    background-position: -100px 0;
+}
+
+/* End: Fullscreen */
+
+/* Start: Mute/Volume */
+.mejs__mute > button {
+    background-position: -60px 0;
+}
+
+.mejs__unmute > button {
+    background-position: -40px 0;
+}
+
+.mejs__volume-button {
+    position: relative;
+}
+
+.mejs__volume-button > .mejs__volume-slider {
+    -webkit-backface-visibility: hidden;
+    background: rgba(50, 50, 50, 0.7);
+    border-radius: 0;
+    bottom: 100%;
+    display: none;
+    height: 115px;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 25px;
+    z-index: 1;
+}
+
+.mejs__volume-button:hover {
+    border-radius: 0 0 4px 4px;
+}
+
+.mejs__volume-total {
+    background: rgba(255, 255, 255, 0.5);
+    height: 100px;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    top: 8px;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 2px;
+}
+
+.mejs__volume-current {
+    background: rgba(255, 255, 255, 0.9);
+    left: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.mejs__volume-handle {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1px;
+    cursor: ns-resize;
+    height: 6px;
+    left: 50%;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 16px;
+}
+
+.mejs__horizontal-volume-slider {
+    display: block;
+    height: 36px;
+    position: relative;
+    vertical-align: middle;
+    width: 56px;
+}
+
+.mejs__horizontal-volume-total {
+    background: rgba(50, 50, 50, 0.8);
+    border-radius: 2px;
+    font-size: 1px;
+    height: 8px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 16px;
+    width: 50px;
+}
+
+.mejs__horizontal-volume-current {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    font-size: 1px;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.mejs__horizontal-volume-handle {
+    display: none;
+}
+
+/* End: Mute/Volume */
+
+/* Start: Track (Captions and Chapters) */
+.mejs__captions-button,
+.mejs__chapters-button {
+    position: relative;
+}
+
+.mejs__captions-button > button {
+    background-position: -140px 0;
+}
+
+.mejs__chapters-button > button {
+    background-position: -180px 0;
+}
+
+.mejs__captions-button > .mejs__captions-selector,
+.mejs__chapters-button > .mejs__chapters-selector {
+    background: rgba(50, 50, 50, 0.7);
+    border: solid 1px transparent;
+    border-radius: 0;
+    bottom: 100%;
+    margin-right: -43px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 50%;
+    visibility: visible;
+    width: 86px;
+}
+
+.mejs__chapters-button > .mejs__chapters-selector {
+    margin-right: -55px;
+    width: 110px;
+}
+
+.mejs__captions-selector-list,
+.mejs__chapters-selector-list {
+    list-style-type: none !important;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.mejs__captions-selector-list-item,
+.mejs__chapters-selector-list-item {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    list-style-type: none !important;
+    margin: 0 0 6px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.mejs__captions-selector-list-item:hover,
+.mejs__chapters-selector-list-item:hover {
+    background-color: rgb(200, 200, 200) !important;
+    background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.mejs__captions-selector-input,
+.mejs__chapters-selector-input {
+    clear: both;
+    float: left;
+    left: -1000px;
+    margin: 3px 3px 0 5px;
+    position: absolute;
+}
+
+.mejs__captions-selector-label,
+.mejs__chapters-selector-label {
+    cursor: pointer;
+    float: left;
+    font-size: 10px;
+    line-height: 15px;
+    padding: 4px 10px 0;
+    width: 100%;
+}
+
+.mejs__captions-selected,
+.mejs__chapters-selected {
+    color: rgba(33, 248, 248, 1);
+}
+
+.mejs__captions-translations {
+    font-size: 10px;
+    margin: 0 0 5px;
+}
+
+.mejs__captions-layer {
+    bottom: 0;
+    color: #fff;
+    font-size: 16px;
+    left: 0;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+}
+
+.mejs__captions-layer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.mejs__captions-layer[lang=ar] {
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.mejs__captions-position {
+    bottom: 15px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.mejs__captions-position-hover {
+    bottom: 35px;
+}
+
+.mejs__captions-text,
+.mejs__captions-text * {
+    background: rgba(20, 20, 20, 0.5);
+    box-shadow: 5px 0 0 rgba(20, 20, 20, 0.5), -5px 0 0 rgba(20, 20, 20, 0.5);
+    padding: 0;
+    white-space: pre-wrap;
+}
+
+.mejs__container.mejs__hide-cues video::-webkit-media-text-track-container {
+    display: none;
+}
+
+/* End: Track (Captions and Chapters) */
+
+/* Start: Error */
+.mejs__overlay-error {
+    position: relative;
+}
+.mejs__overlay-error > img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+.mejs__cannotplay,
+.mejs__cannotplay a {
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.mejs__cannotplay {
+    position: relative;
+}
+
+.mejs__cannotplay p,
+.mejs__cannotplay a {
+    display: inline-block;
+    padding: 0 15px;
+    width: 100%;
+}
+/* End: Error */
