@@ -1,1 +1,215 @@
+.mejs__offscreen {
+    border: 0;
+    clip: rect( 1px, 1px, 1px, 1px );
+    -webkit-clip-path: inset( 50% );
+            clip-path: inset( 50% );
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal;
+}
 
+.mejs__container {
+    background: #000;
+    box-sizing: border-box;
+    font-family: 'Helvetica', Arial, serif;
+    position: relative;
+    text-align: left;
+    text-indent: 0;
+    vertical-align: top;
+}
+
+.mejs__container * {
+    box-sizing: border-box;
+}
+
+/* Hide native play button and control bar from iOS to favor plugin button */
+.mejs__container video::-webkit-media-controls,
+.mejs__container video::-webkit-media-controls-panel,
+.mejs__container video::-webkit-media-controls-panel-container,
+.mejs__container video::-webkit-media-controls-start-playback-button {
+    -webkit-appearance: none;
+    display: none !important;
+}
+
+.mejs__fill-container,
+.mejs__fill-container .mejs__container {
+    height: 100%;
+    width: 100%;
+}
+
+.mejs__fill-container {
+    background: transparent;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.mejs__container:focus {
+    outline: none;
+}
+
+.mejs__iframe-overlay {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.mejs__embed,
+.mejs__embed body {
+    background: #000;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+.mejs__fullscreen {
+    overflow: hidden !important;
+}
+
+.mejs__container-fullscreen {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.mejs__container-fullscreen .mejs__mediaelement,
+.mejs__container-fullscreen video {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+/* Start: LAYERS */
+.mejs__background {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.mejs__mediaelement {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+.mejs__poster {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+:root .mejs__poster-img {
+    display: none;
+}
+
+.mejs__poster-img {
+    border: 0;
+    padding: 0;
+}
+
+.mejs__overlay {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.mejs__layer {
+    z-index: 1;
+}
+
+.mejs__overlay-play {
+    cursor: pointer;
+}
+
+.mejs__overlay-button {
+    background: url('mejs-controls.svg') no-repeat;
+    background-position: 0 -39px;
+    height: 80px;
+    width: 80px;
+}
+
+.mejs__overlay:hover > .mejs__overlay-button {
+    background-position: -80px -39px;
+}
+
+.mejs__overlay-loading {
+    height: 80px;
+    width: 80px;
+}
+
+.mejs__overlay-loading-bg-img {
+    -webkit-animation: mejs__loading-spinner 1s linear infinite;
+            animation: mejs__loading-spinner 1s linear infinite;
+    background: transparent url('mejs-controls.svg') -160px -40px no-repeat;
+    display: block;
+    height: 80px;
+    width: 80px;
+    z-index: 1;
+}
+
+@-webkit-keyframes mejs__loading-spinner {
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+@keyframes mejs__loading-spinner {
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+
+/* End: LAYERS */
+
+/* Start: CONTROL BAR */
+.mejs__controls {
+    bottom: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 40px;
+    left: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 10px;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+}
+
+.mejs__controls:not([style*='display: none']) {
+    background: rgba(255, 0, 0, 0.7);
+    background: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.35));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.35));
+}
