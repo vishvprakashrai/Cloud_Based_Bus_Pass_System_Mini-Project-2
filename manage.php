@@ -179,3 +179,102 @@
                 <p class="mb-0 font-weight-bold" style="float: left;">From - To &nbsp &nbsp</p>
               <p class="mb-4">
                 GLA University - 
+				<?php
+						echo $row['dest'];
+					?>
+                </p>
+                
+                
+                <p class="mb-0 font-weight-bold" style="float: left;">Amount Paid &nbsp &nbsp</p>
+              <p class="mb-4">
+					<?php
+						echo $row['paid'];
+					?>
+                </p>
+
+
+                <table>
+                    <tr>
+                        <td>
+                <form class="print" action="suspend.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                    <input type="submit" style="width: 200px" class="btn btn-primary py-1 px-5 text-white" value="Suspend Pass">
+                </form>
+                        </td>
+                        <td>
+                <button class="print btn btn-primary py-1 px-5 text-white" style="width: 200px; margin-bottom:15px; margin-left: 75px;" onclick="window.print()">Print Pass</button>
+                    
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            </div>
+        </div>
+      </div>
+    </div>
+
+        </div>
+              
+                      <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="mb-5">
+              <h3 class="footer-heading mb-4">About Travelers</h3>
+              <p>Provides student a pass for their daily life to travel to/from GLA University, Mathura</p>
+            </div>
+
+            
+            
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0" style="margin-left: auto;">
+            <div class="row mb-5">
+              <div class="col-md-12">
+                <h3 class="footer-heading mb-4">Navigations</h3>
+              </div>
+              <div class="col-md-6 col-lg-6">
+                <ul class="list-unstyled">
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              
+            </div>
+
+            
+
+          </div>
+
+                    
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+    
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+    </body>
+</html>
