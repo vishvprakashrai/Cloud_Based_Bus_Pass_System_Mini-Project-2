@@ -50,4 +50,132 @@
                 display: <?php echo $body; ?>;
             }
             
-     
+     @media print {
+	  .print {
+		display: none;
+	  }
+	  footer{
+		display: none;
+	  }
+	}
+            
+        </style>
+    </head>
+    <body>
+          <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+    <header class="site-navbar py-1" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Travelers</a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li class="active">
+                  <a href="index.html">Home</a>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="manage.php">Manage Pass</a></li>
+                  <li><a href="bus_details.html">Bus Details</a></li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+      
+    </header>
+              
+              
+              <div class="site-blocks-cover inner-page-cover print" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+
+            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+              <h1 class="text-white font-weight-light">Manage Pass</h1>
+              <div><a href="index.html">Home</a> <span class="mx-2 text-white">&bullet;</span> <span class="text-white">Mange Pass</span></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>  
+
+
+        <left>
+            <form class="print" action="manage.php" method="post" style="margin-top:75px; margin-left: 75px">
+            ID: <input type="text" id="pass_id" style="height:35px; margin-right: 15px;" name="pass_id" value="<?php echo $id; ?>" required>
+            PASSWORD: <input type="password" id="pass_id" style="height:35px;" name="password" required> <input type="submit" class="btn btn-primary py-1 px-5 text-white" value="Search">
+        </form>
+              </left>
+        <br/>
+        <div class="pass_body">
+                <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            
+            <div class="p-4 mb-3 bg-white">
+              
+                <p class="mb-0 font-weight-bold" style="float: left;">Id &nbsp &nbsp</p>
+                <p class="mb-4">
+                    <?php
+						echo $row['id'];
+					?>
+                </p>
+                
+              <p class="mb-0 font-weight-bold" style="float: left;">Name &nbsp &nbsp</p>
+                <p class="mb-4">
+                    <?php
+						echo $row['name'];
+					?>
+                </p>
+
+              <p class="mb-0 font-weight-bold" style="float: left;">Mobile &nbsp &nbsp</p>
+              <p class="mb-4">
+					<?php
+						echo $row['contact'];
+					?>
+                </p>
+
+              <p class="mb-0 font-weight-bold" style="float: left;">Email Address &nbsp &nbsp</p>
+              <p class="mb-4">
+					<?php
+						echo $row['email'];
+					?>
+                </p>
+                
+                <div>
+                <p class="mb-0 font-weight-bold" style="float: left;">Valid Till &nbsp &nbsp</p>
+              <p class="mb-4">
+					<?php
+						echo $row['date'];
+					?>
+                </p>
+                <form class="print" action="renew.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                    <input type="date" style="margin-right: 75px; width:200px; height:35px" min="<?php echo $row['date']; ?>" required name="new_date">
+                    <input type="submit" class="btn btn-primary py-1 px-5 text-white" style="width: 200px" value="Renew Pass">
+                </form>
+                
+                    
+                </div>
+                
+                
+                <p class="mb-0 font-weight-bold" style="float: left;">From - To &nbsp &nbsp</p>
+              <p class="mb-4">
+                GLA University - 
